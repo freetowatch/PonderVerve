@@ -135,6 +135,11 @@ a:hover {
     white-space: pre-wrap; /* Adjust to control white space handling */
 }
 
+.ad-container{
+  position: absolute;
+  top: 0; /* Adjust as needed */
+  right: 0; 
+}
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
     .trending {
