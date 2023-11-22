@@ -8,10 +8,8 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <script type="text/javascript" src="//ads.vidoomy.com/pondervervevercelapp_23481.js" ></script>
         <h1><span style="color: brown;">PONDER</span><span class="black-text">VERVE</span></h1>
     <hr>
-    <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="123143"></script>
     <div class="Lnews2">
         <h2 class="Lnews">Latest News</h2>
         <ul>
@@ -93,6 +91,7 @@
             </div>
         </div>
     </div>
+    <div id="news-container"></div>
     <div class="trending-container" onclick="toggleDropdown('drop')">
         <div class="trending">
             <p style="font-size: 25px;">
@@ -127,51 +126,5 @@
             </div>
         </div>
     </div>
-    <div id="news-container"></div>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Replace 'YOUR_API_KEY' with your actual API key
-        const apiKey = 'pub_33315d0bef957f286934ab26b7c88c6bd52a5';
-        const apiUrl = 'https://api.currentsapi.services/v1/latest-news'; // Example URL, adjust as needed
-
-        // Make API request
-        fetch(apiUrl, {
-            method: 'GET',
-            headers: {
-                'X-API-KEY': apiKey,
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Log the entire API response and the news array
-            console.log('API Response:', data);
-            console.log('News Array:', data.news);
-            // Handle the response data
-            displayNews(data);
-        })
-        .catch(error => {
-            // Handle errors
-            console.error('Error:', error);
-        });
-
-        // Display news on the webpage
-        function displayNews(newsData) {
-            const newsContainer = document.getElementById('news-container');
-
-            // Iterate through articles and display them
-            newsData.news.forEach(article => {
-                const articleElement = document.createElement('div');
-                articleElement.innerHTML = `
-                    <h2>${article.title}</h2>
-                    <p>${article.description}</p>
-                    <a href="${article.url}" target="_blank">Read more</a>
-                    <hr>
-                `;
-                newsContainer.appendChild(articleElement);
-            });
-        }
-    });
-    </script>
 </body>
 </html>
